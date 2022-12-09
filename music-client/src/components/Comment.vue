@@ -65,7 +65,7 @@ export default defineComponent({
     // 获取所有评论
     async function getComment() {
       try {
-        const result = (await HttpManager.getAllComment(type.value, songIdVO.value)) as ResponseBody;
+        const result = (await HttpManager.getAllComment(type.value, playId.value)) as ResponseBody;
         commentList.value = result.data;
         for (let index = 0; index < commentList.value.length; index++) {
           // 获取评论用户的昵称和头像
@@ -86,16 +86,20 @@ export default defineComponent({
       let songListId = null;
       let songId = null;
       let nowType = null;
+      const userId = userIdVO.value;
+      const content = textarea.value;
       if (type.value === 1) {
         nowType = 1;
         songListId = `${playId.value}`;
+        songId = `0`;
+
       } else if (type.value === 0) {
         nowType = 0;
         songId = `${playId.value}`;
+        songListId = `0`;
+
       }
-      const userId = userIdVO.value;
-      const content = textarea.value;
-      const result = (await HttpManager.setComment({userId,content,songId,songListId,nowType})) as ResponseBody;
+      const result = (await HttpManager.setComment({userId, content, songId, songListId, nowType})) as ResponseBody;
       (proxy as any).$message({
         message: result.message,
         type: result.type,
@@ -105,6 +109,7 @@ export default defineComponent({
         textarea.value = "";
         await getComment();
       }
+
     }
 
     // 删除评论

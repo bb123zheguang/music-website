@@ -132,7 +132,7 @@ public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer>
         queryWrapper.eq("username",username);
         String secretPassword = DigestUtils.md5DigestAsHex((SALT + password).getBytes(StandardCharsets.UTF_8));
 
-        queryWrapper.eq("password",secretPassword);
+        queryWrapper.eq("password",password);
         return consumerMapper.selectCount(queryWrapper) > 0;
     }
 

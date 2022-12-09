@@ -6,6 +6,7 @@ export const enum RouterName {
   SongList = "/songList",
   ListSong = "/listSong",
   Comment = "/Comment",
+  SongComment = "/song_comment",
   Consumer = "/consumer",
   Collect = "/collect",
   Error = "/404",

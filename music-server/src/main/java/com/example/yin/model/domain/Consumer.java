@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Date;
 
-@TableName(value = "consumer")
+@TableName(value = "commonuser")
 @Data
 public class Consumer {
     @TableId(type = IdType.AUTO)

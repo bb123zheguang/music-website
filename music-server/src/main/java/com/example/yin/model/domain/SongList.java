@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-@TableName(value = "song_list")
+@TableName(value = "songlist")
 @Data
 public class SongList {
 
@@ -20,6 +20,8 @@ public class SongList {
     private String style;
 
     private String introduction;
+
+    private Integer creatorId;
 
     @Override
     public String toString() {

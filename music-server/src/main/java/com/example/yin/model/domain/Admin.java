@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-@TableName(value = "admin")
+@TableName(value = "adminuser")
 @Data
 public class Admin {
     @TableId(type = IdType.AUTO)

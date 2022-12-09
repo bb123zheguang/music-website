@@ -1,23 +1,30 @@
 package com.example.yin.model.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.io.Serializable;
+import java.util.Date;
 
-@TableName(value = "song_songlist")
+@TableName(value = "song_comment")
 @Data
-public class ListSong implements Serializable {
-
+public class SongComment {
     @TableId(type = IdType.AUTO)
     private Integer id;
 
+    private Integer userId;
+
     private Integer songId;
 
-    private Integer songListId;
+    private String content;
+
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+
+    private Byte type;
+
+    private Integer up;
+
 
     @Override
     public String toString() {

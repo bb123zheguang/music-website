@@ -54,7 +54,16 @@ const HttpManager = {
 
   // =======================> 评论 API 完成
   // 添加评论
-  setComment: ({userId,content,songId,songListId,nowType}) => post(`comment/add`, {userId,content,songId,songListId,nowType}),
+  setComment: ({userId,content,songId,songListId,nowType}) => {
+    if (songId === '0'){
+      return post(`comment/add`, {userId, content, songListId, nowType})
+    }
+    else if(songListId === '0'){
+      return post(`song_comment/add`, {userId,content,songId,nowType})
+    }
+
+  },
+
   // 删除评论
   deleteComment: (id) => get(`comment/delete?id=${id}`),
   // 点赞
@@ -65,7 +74,7 @@ const HttpManager = {
     if (type === 1) {
       url = `comment/songList/detail?songListId=${id}`;
     } else if (type === 0) {
-      url = `comment/song/detail?songId=${id}`;
+      url = `song_comment/song/detail?songId=${id}`;
     }
     return get(url);
   },

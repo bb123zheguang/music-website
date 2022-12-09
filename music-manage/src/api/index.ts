@@ -23,7 +23,7 @@ const HttpManager = {
 
     // =======================> 评论列表 API 完成
     // 获得指定歌曲ID的评论列表
-    getCommentOfSongId: (songId) => get(`comment/song/detail?songId=${songId}`),
+    getCommentOfSongId: (songId) => get(`song_comment/song/detail?songId=${songId}`),
     // 获得指定歌单ID的评论列表
     getCommentOfSongListId: (songListId) => get(`comment/songList/detail?songListId=${songListId}`),
     // 删除评论

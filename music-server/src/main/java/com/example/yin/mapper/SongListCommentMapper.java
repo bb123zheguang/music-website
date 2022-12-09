@@ -1,10 +1,10 @@
 package com.example.yin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.yin.model.domain.Admin;
+import com.example.yin.model.domain.SongListComment;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AdminMapper extends BaseMapper<Admin> {
+public interface SongListCommentMapper extends BaseMapper<SongListComment> {
 
 }

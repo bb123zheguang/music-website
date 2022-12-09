@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.yin.mapper.CommentMapper">
-  <resultMap id="BaseResultMap" type="com.example.yin.model.domain.Comment">
+<mapper namespace="com.example.yin.mapper.SongListCommentMapper">
+  <resultMap id="BaseResultMap" type="com.example.yin.model.domain.SongListComment">
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="song_id" property="songId" jdbcType="INTEGER" />
     <result column="song_list_id" property="songListId" jdbcType="INTEGER" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -12,7 +11,7 @@
     <result column="up" property="up" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, user_id, song_id, song_list_id, content, create_time, type, up
+    id, user_id, song_list_id, content, create_time, type, up
   </sql>
 
 </mapper>

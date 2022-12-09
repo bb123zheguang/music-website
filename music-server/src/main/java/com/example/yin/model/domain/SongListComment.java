@@ -6,15 +6,13 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Date;
 
-@TableName(value = "comment")
+@TableName(value = "songlist_comment")
 @Data
-public class Comment {
+public class SongListComment {
     @TableId(type = IdType.AUTO)
     private Integer id;
 
     private Integer userId;
-
-    private Integer songId;
 
     private Integer songListId;
 

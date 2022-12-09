@@ -9,14 +9,12 @@ import java.util.Date;
  * @Time : 2022/6/6 14:29
  **/
 @Data
-public class CommentRequest {
+public class SongCommentRequest {
     private Integer id;
 
     private Integer userId;
 
     private Integer songId;
-
-    private Integer songListId;
 
     private String content;
 
